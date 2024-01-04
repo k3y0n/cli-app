@@ -8,11 +8,11 @@ export const printSuccess = (success) => {
 };
 export const printWeather = (res, icon) => {
   console.log(
-    dedent`${chalk.bgYellow(" WEATHER ")} Погода в городе ${res.name}
+    `${chalk.bgYellow(" WEATHER ")} Weather in city ${res.name}
 		${icon}  ${res.weather[0].description}
-		Температура: ${res.main.temp} (ощущается как ${res.main.feels_like})
-		Влажность: ${res.main.humidity}%
-		Скорость ветра: ${res.wind.speed}
+		Temperature: ${res.main.temp} (feels like ${res.main.feels_like})
+		Humidity: ${res.main.humidity}%
+		Wind speed: ${res.wind.speed}
 		`
   );
 };

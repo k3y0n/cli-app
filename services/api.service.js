@@ -31,16 +31,20 @@ export const getWeather = async (city) => {
   if (!token) {
     return printError("Invalid token, set token by command -t");
   }
-  const { data } = await axios.get(
-    "https://api.openweathermap.org/data/2.5/weather",
-    {
-      params: {
-        q: city,
-        appid: token,
-        lang: "ru",
-        units: "metric",
-      },
-    }
-  );
-  return data;
+  try {
+    const { data } = await axios.get(
+      "https://api.openweathermap.org/data/2.5/weather",
+      {
+        params: {
+          q: city,
+          appid: token,
+          lang: "en",
+          units: "metric",
+        },
+      }
+    );
+    return data;
+  } catch (error) {
+    printError(error.message);
+  }
 };
