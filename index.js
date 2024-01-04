@@ -40,7 +40,7 @@ const saveCity = async (city) => {
 
 const getForecast = async () => {
   try {
-    const city = process.env.CITY ?? await getKeyValue(TOKEN_DICTIONARY.city);
+    const city = process.env.CITY ?? (await getKeyValue(TOKEN_DICTIONARY.city));
     const weather = await getWeather(city);
     printWeather(weather, getIcon(weather.weather[0].icon));
   } catch (e) {
@@ -49,7 +49,7 @@ const getForecast = async () => {
     } else if (e?.response?.status == 401) {
       printError("Token provided not valid");
     } else {
-      printError("test", e.message);
+      printError(e);
     }
   }
 };

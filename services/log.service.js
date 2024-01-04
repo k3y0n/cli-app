@@ -1,7 +1,7 @@
 import chalk from "chalk";
 
 export const printError = (error) => {
-  console.log(chalk.bgRed(`Error: ${error.message}`));
+  console.log(chalk.bgRed(`Error: ${error?.message}`));
 };
 export const printSuccess = (success) => {
   console.log(chalk.bgGreen(`Success: ${success}`));
