@@ -1,6 +1,6 @@
-export const getArgs = (args) => {
+export const getArgs = (data) => {
   const res = {};
-  const args = args.slice(0, 2);
+  const [info, filename, ...args] = data;
   args.forEach((element, index, arr) => {
     if (element.charAt(0) === "-") {
       if (index === arr.length - 1) {

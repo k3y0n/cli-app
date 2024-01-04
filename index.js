@@ -1,6 +1,8 @@
-import { getArgs } from "./helpers/args";
+import { getArgs } from "./helpers/args.js";
+import { printHelp, printError, printSuccess } from "./services/log.service.js";
 const initCLI = () => {
-  const args = getArgs(process.args);
+//   const args = getArgs(process.args);
+  printHelp();
 };
 
 initCLI();
