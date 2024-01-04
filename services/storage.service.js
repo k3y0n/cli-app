@@ -6,7 +6,7 @@ const filePath = join(homedir(), "weather-data.json");
 
 export const TOKEN_DICTIONARY = {
   token: "token",
-  city: "city",
+  city: "Minsk",
 };
 
 const isExist = async (path) => {
